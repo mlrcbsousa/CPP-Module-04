@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:19:10 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/08 18:19:15 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/08 19:34:23 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 
 # include <iostream>
 
+# include "Animal.hpp"
+
 // ************************************************************************** //
-//                               Cat Class                             //
+//                               Cat Class                             		  //
 // ************************************************************************** //
 
-class Cat {
+class Cat : public Animal {
 
 public:
 
@@ -28,9 +30,7 @@ public:
 	~Cat( void );
 	Cat & operator = ( Cat const & rhs );
 
-private:
-
-
+	virtual void	makeSound( void ) const;
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:19:51 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/08 18:19:57 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/08 19:34:28 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 
 # include <iostream>
 
+# include "Animal.hpp"
+
 // ************************************************************************** //
-//                               Dog Class                             //
+//                               Dog Class                             		  //
 // ************************************************************************** //
 
-class Dog {
+class Dog : public Animal {
 
 public:
 
@@ -28,9 +30,7 @@ public:
 	~Dog( void );
 	Dog & operator = ( Dog const & rhs );
 
-private:
-
-
+	virtual void	makeSound( void ) const;
 
 };
 

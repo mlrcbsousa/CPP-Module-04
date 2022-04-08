@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:28:24 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/08 18:28:33 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/08 19:35:28 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 
 # include <iostream>
 
+# include "WrongAnimal.hpp"
+
 // ************************************************************************** //
-//                               WrongCat Class                             //
+//                               WrongCat Class                               //
 // ************************************************************************** //
 
-class WrongCat {
+class WrongCat : public WrongAnimal {
 
 public:
 
@@ -28,9 +30,7 @@ public:
 	~WrongCat( void );
 	WrongCat & operator = ( WrongCat const & rhs );
 
-private:
-
-
+	void	makeSound( void ) const;
 
 };
 

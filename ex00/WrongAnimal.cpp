@@ -6,27 +6,36 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:27:51 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/08 18:27:56 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/08 20:01:37 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
 /* Constructors */
-WrongAnimal::WrongAnimal( void ) { /* no-op */}
+WrongAnimal::WrongAnimal( void ) { LOG("WrongAnimal Default constructor called"); }
+
+WrongAnimal::WrongAnimal( std::string type ) : type(type)
+{
+	LOG("WrongAnimal String constructor called");
+}
+
 WrongAnimal::WrongAnimal( WrongAnimal const & src ) { *this = src; }
 
 /* Destructor */
-WrongAnimal::~WrongAnimal( void ) { /* no-op */}
+WrongAnimal::~WrongAnimal( void ) { LOG("WrongAnimal destructor called"); }
 
 /* Assignment operator */
 WrongAnimal &  WrongAnimal::operator = ( WrongAnimal const & rhs )
 {
 	if (this != &rhs) {
-		*this = rhs;
+		type = rhs.type;
 	}
 	return *this;
 }
+
+std::string	WrongAnimal::getType( void ) const { return type; }
+void	WrongAnimal::makeSound( void ) const { LOG("wrong sound"); }
 
 /* ostream override */
 std::ostream &  operator << ( std::ostream & o, WrongAnimal const & i)
