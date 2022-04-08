@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:28:12 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/08 20:01:41 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/08 20:52:12 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@ WrongCat::WrongCat( void ) : WrongAnimal("Cat")
 	LOG("WrongCat Default constructor called");
 }
 
-WrongCat::WrongCat( WrongCat const & src ) { *this = src; }
+WrongCat::WrongCat( WrongCat const & src )
+{
+	LOG("WrongCat Copy constructor called");
+	*this = src;
+}
 
 /* Destructor */
 WrongCat::~WrongCat( void ) { LOG("WrongCat destructor called"); }
@@ -26,6 +30,7 @@ WrongCat::~WrongCat( void ) { LOG("WrongCat destructor called"); }
 /* Assignment operator */
 WrongCat &  WrongCat::operator = ( WrongCat const & rhs )
 {
+	LOG("WrongCat Assignment operator called");
 	if (this != &rhs) {
 		type = rhs.type;
 	}

@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:27:51 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/08 20:01:37 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/08 20:51:42 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,11 @@ WrongAnimal::WrongAnimal( std::string type ) : type(type)
 	LOG("WrongAnimal String constructor called");
 }
 
-WrongAnimal::WrongAnimal( WrongAnimal const & src ) { *this = src; }
+WrongAnimal::WrongAnimal( WrongAnimal const & src )
+{
+	LOG("WrongAnimal Copy constructor called");
+	*this = src;
+}
 
 /* Destructor */
 WrongAnimal::~WrongAnimal( void ) { LOG("WrongAnimal destructor called"); }
@@ -28,6 +32,7 @@ WrongAnimal::~WrongAnimal( void ) { LOG("WrongAnimal destructor called"); }
 /* Assignment operator */
 WrongAnimal &  WrongAnimal::operator = ( WrongAnimal const & rhs )
 {
+	LOG("WrongAnimal Assignment operator called");
 	if (this != &rhs) {
 		type = rhs.type;
 	}

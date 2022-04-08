@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:17:50 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/08 20:01:05 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/08 20:31:55 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,11 @@ Animal::Animal( std::string type ) : type(type)
 	LOG("Animal String constructor called");
 }
 
-Animal::Animal( Animal const & src ) { *this = src; }
+Animal::Animal( Animal const & src )
+{
+	LOG("Animal Copy constructor called");
+	*this = src;
+}
 
 /* Destructor */
 Animal::~Animal( void ) { LOG("Animal destructor called"); }
@@ -28,6 +32,7 @@ Animal::~Animal( void ) { LOG("Animal destructor called"); }
 /* Assignment operator */
 Animal &  Animal::operator = ( Animal const & rhs )
 {
+	LOG("Animal Assignment operator called");
 	if (this != &rhs) {
 		type = rhs.type;
 	}

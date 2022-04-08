@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:19:43 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/08 20:01:31 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/08 20:50:08 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 /* Constructors */
 Dog::Dog( void ) : Animal("Dog") { LOG("Dog Default constructor called"); }
-Dog::Dog( Dog const & src ) { *this = src; }
+
+Dog::Dog( Dog const & src )
+{
+	LOG("Dog Copy constructor called");
+	*this = src;
+}
 
 /* Destructor */
 Dog::~Dog( void ) { LOG("Dog destructor called"); }
@@ -22,6 +27,7 @@ Dog::~Dog( void ) { LOG("Dog destructor called"); }
 /* Assignment operator */
 Dog &  Dog::operator = ( Dog const & rhs )
 {
+	LOG("Dog Assignment operator called");
 	if (this != &rhs) {
 		type = rhs.type;
 	}
