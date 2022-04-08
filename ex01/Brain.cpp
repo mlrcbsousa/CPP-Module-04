@@ -6,24 +6,30 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:25:01 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/08 18:25:07 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/08 20:53:40 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
 /* Constructors */
-Brain::Brain( void ) { /* no-op */}
-Brain::Brain( Brain const & src ) { *this = src; }
+Brain::Brain( void ) { LOG("Brain Default constructor called"); }
+
+Brain::Brain( Brain const & src )
+{
+	LOG("Brain Copy constructor called");
+	*this = src;
+}
 
 /* Destructor */
-Brain::~Brain( void ) { /* no-op */}
+Brain::~Brain( void ) { LOG("Brain destructor called"); }
 
 /* Assignment operator */
 Brain &  Brain::operator = ( Brain const & rhs )
 {
+	LOG("Brain Assignment operator called");
 	if (this != &rhs) {
-		*this = rhs;
+		// type = rhs.type;
 	}
 	return *this;
 }

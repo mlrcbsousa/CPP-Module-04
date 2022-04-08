@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:25:10 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/08 18:25:15 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/08 20:21:39 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define __BRAIN_H__
 
 # include <iostream>
+
+# define LOG(x) std::cout << x << std::endl
 
 // ************************************************************************** //
 //                               Brain Class                             //
@@ -30,7 +32,7 @@ public:
 
 private:
 
-
+	std::string	ideas[100];
 
 };
 
