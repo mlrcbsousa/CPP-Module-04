@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:18:54 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/08 20:57:25 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/09 17:56:24 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,9 @@ Cat &  Cat::operator = ( Cat const & rhs )
 }
 
 void	Cat::makeSound( void ) const { LOG("Meow"); }
+
+void	Cat::setIdea( size_t i, std::string & idea ) { brain->setIdea(i, idea); }
+std::string	Cat::getIdea( size_t i ) const { return brain->getIdea(i); }
 
 /* ostream override */
 std::ostream &  operator << ( std::ostream & o, Cat const & i)

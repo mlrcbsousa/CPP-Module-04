@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:20:00 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/09 17:39:47 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/09 17:58:47 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ int	main( void )
 
 	LOG("=========================================");
 
-	Dog	a;
+	Cat	a;
 	std::string	hello("Hello World!");
 	std::string	idea("Foood!");
 
 	a.setIdea(0, hello);
 
-	Dog b(a);
+	Cat b(a);
 
 	LOG(b.getIdea(0)); // should be "Hello World!"
 	a.setIdea(0, idea);

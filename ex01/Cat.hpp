@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:19:10 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/08 20:27:40 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/09 17:56:06 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ public:
 	Cat & operator = ( Cat const & rhs );
 
 	virtual void	makeSound( void ) const;
+
+	void		setIdea( size_t i, std::string & idea );
+	std::string	getIdea( size_t i ) const;
 
 private:
 
