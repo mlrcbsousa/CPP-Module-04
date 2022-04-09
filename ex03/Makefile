@@ -6,12 +6,12 @@
 #    By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/21 21:26:04 by msousa            #+#    #+#              #
-#    Updated: 2022/04/08 18:30:13 by msousa           ###   ########.fr        #
+#    Updated: 2022/04/09 18:43:25 by msousa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CFLAGS	= -Wall -Wextra -Werror -std=c++98 -g
-CC			= g++
+CC			= clang++
 RM			= rm -f
 OBJ			= ${SRC:%.cpp=obj/%.o}
 SRC			= AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp main.cpp
