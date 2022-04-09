@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:18:11 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/09 18:03:11 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/09 18:38:44 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
 
 	std::string		getType( void ) const;
 
-	virtual void	makeSound( void ) const;
+	virtual void	makeSound( void ) const = 0;
 
 protected:
 

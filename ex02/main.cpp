@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:20:00 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/09 18:04:40 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/09 18:39:51 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,12 @@ int	main( void )
 	a.setIdea(0, idea);
 	LOG(a.getIdea(0)); // should be "Foood!"
 	LOG(b.getIdea(0)); // should be "Hello World!"
+
+	LOG("=========================================");
+
+	// AAnimal animal; //Shouldn't be possible;
+
+	LOG("=========================================");
 
 	return 0;
 }
