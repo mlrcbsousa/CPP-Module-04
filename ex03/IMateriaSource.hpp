@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/08 18:31:48 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/09 20:11:32 by msousa           ###   ########.fr       */
+/*   Created: 2022/04/09 19:41:27 by msousa            #+#    #+#             */
+/*   Updated: 2022/04/09 19:42:26 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ICE_H__
-# define __ICE_H__
+#ifndef __I_MATERIA_SOURCE_H__
+# define __I_MATERIA_SOURCE_H__
 
 # include <iostream>
 
-# include "AMateria.hpp"
-
 // ************************************************************************** //
-//                               Ice Class                             		  //
+//                               MateriaSource Interface                      //
 // ************************************************************************** //
 
-class Ice : public AMateria {
+class IMateriaSource {
 
 public:
 
-	Ice( void );
-	Ice( Ice const & src );
-	virtual ~Ice( void );
-	virtual Ice & operator = ( Ice const & rhs );
+	IMateriaSource( void );
+	IMateriaSource( IMateriaSource const & src );
+	~IMateriaSource( void );
+	IMateriaSource &	operator = ( IMateriaSource const & rhs );
 
-	virtual AMateria* clone( void ) const;
-	virtual void use( ICharacter & target );
+private:
+
+
 
 };
 
-std::ostream &  operator << ( std::ostream & o, Ice const & p);
+std::ostream &	operator << ( std::ostream & o, IMateriaSource const & i );
 
-#endif /* __ICE_H__ */
+#endif /* __I_MATERIA_SOURCE_H__ */

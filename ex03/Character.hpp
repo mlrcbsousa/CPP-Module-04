@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:31:01 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/08 18:31:08 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/09 20:42:00 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,36 @@
 
 # include <iostream>
 
+# include "ICharacter.hpp"
+
+# define INVENTORY_SIZE 4
+
 // ************************************************************************** //
-//                               Character Class                             //
+//                               Character Class                              //
 // ************************************************************************** //
 
-class Character {
+class Character : public ICharacter {
 
 public:
 
 	Character( void );
+	Character( std::string const & name );
 	Character( Character const & src );
-	~Character( void );
+	virtual ~Character( void );
 	Character & operator = ( Character const & rhs );
+
+	virtual std::string const &	getName( void ) const;
+	virtual void 				equip( AMateria* m );
+	virtual void 				unequip( int idx );
+	virtual void 				use( int idx, ICharacter & target );
 
 private:
 
-
+	std::string	name;
+	AMateria*	inventory[INVENTORY_SIZE];
 
 };
 
-std::ostream &  operator << ( std::ostream & o, Character const & p);
+std::ostream &  operator << ( std::ostream & o, Character const & i );
 
 #endif /* __CHARACTER_H__ */

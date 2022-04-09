@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:32:40 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/08 18:32:47 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/09 20:48:09 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ private:
 
 };
 
-std::ostream &  operator << ( std::ostream & o, MateriaSource const & p);
+std::ostream &  operator << ( std::ostream & o, MateriaSource const & i );
 
 #endif /* __MATERIA_SOURCE_H__ */

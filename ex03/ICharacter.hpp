@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/08 18:31:48 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/09 20:11:32 by msousa           ###   ########.fr       */
+/*   Created: 2022/04/09 19:18:27 by msousa            #+#    #+#             */
+/*   Updated: 2022/04/09 19:42:33 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ICE_H__
-# define __ICE_H__
+#ifndef __I_CHARACTER_H__
+# define __I_CHARACTER_H__
 
 # include <iostream>
 
 # include "AMateria.hpp"
 
+class AMateria;
+
 // ************************************************************************** //
-//                               Ice Class                             		  //
+//                               Character Interface                          //
 // ************************************************************************** //
 
-class Ice : public AMateria {
+class ICharacter {
 
 public:
 
-	Ice( void );
-	Ice( Ice const & src );
-	virtual ~Ice( void );
-	virtual Ice & operator = ( Ice const & rhs );
-
-	virtual AMateria* clone( void ) const;
-	virtual void use( ICharacter & target );
+	virtual ~ICharacter() {}
+	virtual std::string const &	getName( void ) const = 0;
+	virtual void 				equip( AMateria* m ) = 0;
+	virtual void 				unequip( int idx ) = 0;
+	virtual void 				use( int idx, ICharacter & target ) = 0;
 
 };
 
-std::ostream &  operator << ( std::ostream & o, Ice const & p);
-
-#endif /* __ICE_H__ */
+#endif /* __I_CHARACTER_H__ */
