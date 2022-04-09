@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 19:41:27 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/09 19:42:26 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/09 20:59:39 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,20 @@
 
 # include <iostream>
 
+# include "AMateria.hpp"
+
 // ************************************************************************** //
-//                               MateriaSource Interface                      //
+//                          MateriaSource Interface                      	  //
 // ************************************************************************** //
 
 class IMateriaSource {
 
 public:
 
-	IMateriaSource( void );
-	IMateriaSource( IMateriaSource const & src );
-	~IMateriaSource( void );
-	IMateriaSource &	operator = ( IMateriaSource const & rhs );
-
-private:
-
-
+    virtual ~IMateriaSource( void ) {}
+	virtual void learnMateria( AMateria* ) = 0;
+	virtual AMateria* createMateria( std::string const & type ) = 0;
 
 };
-
-std::ostream &	operator << ( std::ostream & o, IMateriaSource const & i );
 
 #endif /* __I_MATERIA_SOURCE_H__ */

@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:30:29 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/09 20:53:06 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/09 20:54:28 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ public:
 	virtual ~AMateria( void );
 	virtual AMateria & operator = ( AMateria const & rhs );
 
-	std::string const & getType( void ) const; // Returns the materia type
+	std::string const & getType( void ) const;
 
 	virtual AMateria* clone( void ) const = 0;
 	virtual void use( ICharacter & target );

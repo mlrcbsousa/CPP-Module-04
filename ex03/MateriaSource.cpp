@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:32:30 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/09 20:48:32 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/09 21:15:28 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,32 @@ MateriaSource &  MateriaSource::operator = ( MateriaSource const & rhs )
 	if (this != &rhs) {
 	}
 	return *this;
+}
+
+void	MateriaSource::learnMateria( AMateria* m )
+{
+	int	i = 0;
+	while (i < SOURCE_SIZE) {
+		if (!source[i]) {
+			source[i] = m->clone();
+			break ;
+		}
+		i++;
+	}
+}
+
+AMateria*	MateriaSource::createMateria( std::string const & type )
+{
+	AMateria*	m = 0;
+
+	for (size_t i = 0; i < SOURCE_SIZE; i++) {
+		if (source[i]->getType() == type) {
+			m = source[i]->clone();
+			break ;
+		}
+	}
+
+	return m;
 }
 
 /* ostream override */
