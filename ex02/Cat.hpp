@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:19:10 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/08 18:19:15 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/09 18:04:03 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,14 @@
 
 # include <iostream>
 
+# include "AAnimal.hpp"
+# include "Brain.hpp"
+
 // ************************************************************************** //
-//                               Cat Class                             //
+//                               Cat Class                             		  //
 // ************************************************************************** //
 
-class Cat {
+class Cat : public AAnimal {
 
 public:
 
@@ -28,9 +31,14 @@ public:
 	~Cat( void );
 	Cat & operator = ( Cat const & rhs );
 
+	virtual void	makeSound( void ) const;
+
+	void		setIdea( size_t i, std::string & idea );
+	std::string	getIdea( size_t i ) const;
+
 private:
 
-
+	Brain *	brain;
 
 };
 

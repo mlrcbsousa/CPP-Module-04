@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/08 18:26:50 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/08 18:27:00 by msousa           ###   ########.fr       */
+/*   Created: 2022/04/08 18:18:11 by msousa            #+#    #+#             */
+/*   Updated: 2022/04/09 18:03:11 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 
 # include <iostream>
 
+# define LOG(x) std::cout << x << std::endl
+
 // ************************************************************************** //
-//                               AAnimal Class                             //
+//                               AAnimal Class                             	  //
 // ************************************************************************** //
 
 class AAnimal {
@@ -25,12 +27,18 @@ public:
 
 	AAnimal( void );
 	AAnimal( AAnimal const & src );
-	~AAnimal( void );
-	AAnimal & operator = ( AAnimal const & rhs );
+	virtual ~AAnimal( void );
+	virtual AAnimal &	operator = ( AAnimal const & rhs );
 
-private:
+	std::string		getType( void ) const;
 
+	virtual void	makeSound( void ) const;
 
+protected:
+
+	AAnimal( std::string type );
+
+	std::string type;
 
 };
 
