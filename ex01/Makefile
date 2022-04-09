@@ -6,7 +6,7 @@
 #    By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/21 21:26:04 by msousa            #+#    #+#              #
-#    Updated: 2022/04/08 18:26:11 by msousa           ###   ########.fr        #
+#    Updated: 2022/04/09 16:55:44 by msousa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,9 @@ all:			${NAME}
 
 test:			${NAME}
 					-./${NAME}
+
+leaks:		${NAME}
+					-leaks -atExit -- ./${NAME} | grep LEAK:
 
 clean:
 					${RM} -rf obj

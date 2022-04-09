@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:25:01 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/08 20:53:40 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/09 17:32:11 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,13 @@ Brain &  Brain::operator = ( Brain const & rhs )
 {
 	LOG("Brain Assignment operator called");
 	if (this != &rhs) {
-		// type = rhs.type;
+		std::copy(rhs.ideas, rhs.ideas + 100, ideas);
 	}
 	return *this;
 }
+
+void	Brain::setIdea( size_t i, std::string & idea ) { ideas[i] = idea; }
+std::string	Brain::getIdea( size_t i ) const { return ideas[i]; }
 
 /* ostream override */
 std::ostream &  operator << ( std::ostream & o, Brain const & i)

@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:19:43 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/08 20:57:45 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/09 17:33:30 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,9 @@ Dog &  Dog::operator = ( Dog const & rhs )
 }
 
 void	Dog::makeSound( void ) const { LOG("Woof"); }
+
+void	Dog::setIdea( size_t i, std::string & idea ) { brain->setIdea(i, idea); }
+std::string	Dog::getIdea( size_t i ) const { return brain->getIdea(i); }
 
 /* ostream override */
 std::ostream &  operator << ( std::ostream & o, Dog const & i)

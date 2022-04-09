@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:25:10 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/08 20:21:39 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/09 17:26:57 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ public:
 	Brain( Brain const & src );
 	~Brain( void );
 	Brain & operator = ( Brain const & rhs );
+
+	void		setIdea( size_t i, std::string & idea );
+	std::string	getIdea( size_t i ) const;
 
 private:
 

@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:20:00 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/08 20:59:27 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/09 17:39:47 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,30 @@
 
 int	main( void )
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const size_t	count = 3;
+	Animal*			animals[count];
 
-	delete j;//should not create a leak
-	delete i;
+	for (size_t i = 0; i < count; i++) {
+		if (i % 2) 	{ animals[i] = new Dog(); }
+		else 		{ animals[i] = new Cat(); }
+	}
+	for (size_t i = 0; i < count; i++)
+		delete animals[i];
+
+	LOG("=========================================");
+
+	Dog	a;
+	std::string	hello("Hello World!");
+	std::string	idea("Foood!");
+
+	a.setIdea(0, hello);
+
+	Dog b(a);
+
+	LOG(b.getIdea(0)); // should be "Hello World!"
+	a.setIdea(0, idea);
+	LOG(a.getIdea(0)); // should be "Foood!"
+	LOG(b.getIdea(0)); // should be "Hello World!"
 
 	return 0;
 }
