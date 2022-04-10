@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:19:10 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/08 19:34:23 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/10 17:35:51 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 
 	Cat( void );
 	Cat( Cat const & src );
-	~Cat( void );
+	virtual ~Cat( void );
 	Cat & operator = ( Cat const & rhs );
 
 	virtual void	makeSound( void ) const;

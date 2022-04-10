@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:31:01 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/10 18:14:57 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/10 18:27:40 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ class Character : public ICharacter {
 
 public:
 
-	Character( void );
 	Character( std::string const & name );
 	Character( Character const & src );
 	virtual ~Character( void );
@@ -40,6 +39,7 @@ public:
 
 private:
 
+	Character( void );
 	std::string	name;
 	AMateria*	inventory[INVENTORY_SIZE];
 

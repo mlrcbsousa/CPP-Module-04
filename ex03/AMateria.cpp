@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:29:03 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/10 18:15:10 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/10 18:49:38 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ AMateria::~AMateria( void ) { /* no-op */ }
 AMateria &  AMateria::operator = ( AMateria const & rhs )
 {
 	LOG("AMateria Assignment operator called");
-	if (this != &rhs) {
-		// type = rhs.type;
-	}
+	(void)rhs;
 	return *this;
 }
 
