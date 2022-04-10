@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:29:03 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/09 19:50:08 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/10 18:15:10 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,4 @@ std::string const &	AMateria::getType( void ) const { return type; }
 void	AMateria::use( ICharacter & target )
 {
 	LOG("* use materia at " << target.getName() << " *");
-}
-
-/* ostream override */
-std::ostream &  operator << ( std::ostream & o, AMateria const & i )
-{
-	(void)i;
-	o << "AMateria";
-	return o;
 }

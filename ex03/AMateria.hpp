@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:30:29 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/09 20:54:28 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/10 18:15:06 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ class AMateria {
 
 public:
 
-	AMateria( void );
 	AMateria( std::string const & type );
 	AMateria( AMateria const & src );
 	virtual ~AMateria( void );
@@ -44,8 +43,10 @@ protected:
 
 	std::string	type;
 
-};
+private:
 
-std::ostream &  operator << ( std::ostream & o, AMateria const & i );
+	AMateria( void );
+
+};
 
 #endif /* __A_MATERIA_H__ */

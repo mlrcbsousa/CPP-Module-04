@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:32:30 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/09 21:15:28 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/10 18:14:25 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,21 @@ MateriaSource::MateriaSource( void ) { /* no-op */ }
 MateriaSource::MateriaSource( MateriaSource const & src ) { *this = src; }
 
 /* Destructor */
-MateriaSource::~MateriaSource( void ) { /* no-op */ }
+MateriaSource::~MateriaSource( void )
+{
+	for (size_t i = 0; i < SOURCE_SIZE; i++)
+		if (source[i]) delete source[i];
+}
 
 /* Assignment operator */
 MateriaSource &  MateriaSource::operator = ( MateriaSource const & rhs )
 {
 	if (this != &rhs) {
+		for (size_t i = 0; i < SOURCE_SIZE; i++)
+			if (source[i]) delete source[i];
+
+		for (size_t i = 0; i < SOURCE_SIZE; i++)
+			if (rhs.source[i]) source[i] = rhs.source[i]->clone();
 	}
 	return *this;
 }
@@ -37,6 +46,7 @@ void	MateriaSource::learnMateria( AMateria* m )
 		}
 		i++;
 	}
+	delete m;
 }
 
 AMateria*	MateriaSource::createMateria( std::string const & type )
@@ -44,19 +54,11 @@ AMateria*	MateriaSource::createMateria( std::string const & type )
 	AMateria*	m = 0;
 
 	for (size_t i = 0; i < SOURCE_SIZE; i++) {
-		if (source[i]->getType() == type) {
+		if (source[i] && source[i]->getType() == type) {
 			m = source[i]->clone();
 			break ;
 		}
 	}
 
 	return m;
-}
-
-/* ostream override */
-std::ostream &	operator << ( std::ostream & o, MateriaSource const & i )
-{
-	(void)i;
-	o << "MateriaSource";
-	return o;
 }

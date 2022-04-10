@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:30:50 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/09 20:50:25 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/10 18:16:44 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,10 @@ void	Character::equip( AMateria* m )
 
 void	Character::unequip( int idx )
 {
+	if (idx < 0 || idx >= INVENTORY_SIZE) {
+		return ;
+	}
+
 	AMateria*	m = inventory[idx];
 
 	if (m)
@@ -68,16 +72,12 @@ void	Character::unequip( int idx )
 
 void	Character::use( int idx, ICharacter & target )
 {
+	if (idx < 0 || idx >= INVENTORY_SIZE) {
+		return ;
+	}
+
 	AMateria*	m = inventory[idx];
 
 	if (m)
 		m->use(target);
-}
-
-/* ostream override */
-std::ostream &  operator << ( std::ostream & o, Character const & i)
-{
-	(void)i;
-	o << "Character";
-	return o;
 }

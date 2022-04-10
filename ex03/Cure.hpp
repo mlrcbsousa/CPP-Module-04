@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:31:21 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/09 20:09:27 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/10 18:14:50 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,5 @@ public:
 	virtual void use( ICharacter & target );
 
 };
-
-std::ostream &  operator << ( std::ostream & o, Cure const & i );
 
 #endif /* __CURE_H__ */

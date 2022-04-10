@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:31:48 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/09 20:11:32 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/10 18:14:34 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,5 @@ public:
 	virtual void use( ICharacter & target );
 
 };
-
-std::ostream &  operator << ( std::ostream & o, Ice const & p);
 
 #endif /* __ICE_H__ */

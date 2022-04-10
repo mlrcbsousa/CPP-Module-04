@@ -6,7 +6,7 @@
 #    By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/21 21:26:04 by msousa            #+#    #+#              #
-#    Updated: 2022/04/09 19:12:05 by msousa           ###   ########.fr        #
+#    Updated: 2022/04/09 21:44:39 by msousa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,16 +15,17 @@ CC			= clang++
 RM			= rm -f
 OBJ			= ${SRC:%.cpp=obj/%.o}
 SRC			= AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp main.cpp
-INC			= AMateria.hpp Character.hpp Cure.hpp Ice.hpp MateriaSource.hpp
+INC			= AMateria.hpp Character.hpp Cure.hpp Ice.hpp MateriaSource.hpp \
+					IMateriaSource.hpp ICharacter.hpp
 
 NAME		= a.out
 
-${NAME}:	${OBJ}
-					${CC} ${CFLAGS} ${OBJ} -o $@
+${NAME}:			${OBJ}
+							${CC} ${CFLAGS} ${OBJ} -o $@
 
-obj/%.o:%.cpp ${INC}
-					@mkdir -p $(dir $@)
-					${CC} ${CFLAGS} -c $< -o $@
+obj/%.o:%.cpp	${INC}
+							@mkdir -p $(dir $@)
+							${CC} ${CFLAGS} -c $< -o $@
 
 all:			${NAME}
 

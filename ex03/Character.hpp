@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:31:01 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/09 20:42:00 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/10 18:14:57 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,5 @@ private:
 	AMateria*	inventory[INVENTORY_SIZE];
 
 };
-
-std::ostream &  operator << ( std::ostream & o, Character const & i );
 
 #endif /* __CHARACTER_H__ */

@@ -6,7 +6,7 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:31:33 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/09 20:16:05 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/10 18:14:46 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /* Constructors */
 Ice::Ice( void ) : AMateria("ice") { /* no-op */ }
-Ice::Ice( Ice const & src ) { *this = src; }
+Ice::Ice( Ice const & src ) : AMateria("ice") { *this = src; }
 
 /* Destructor */
 Ice::~Ice( void ) { /* no-op */ }
@@ -31,12 +31,4 @@ AMateria*	Ice::clone( void ) const { return new Ice(*this); }
 void	Ice::use( ICharacter & target )
 {
 	LOG("* shoots an ice bolt at " << target.getName() << " *");
-}
-
-/* ostream override */
-std::ostream &  operator << ( std::ostream & o, Ice const & i)
-{
-	(void)i;
-	o << "Ice";
-	return o;
 }
