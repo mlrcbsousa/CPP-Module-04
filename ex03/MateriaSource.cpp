@@ -6,14 +6,19 @@
 /*   By: msousa <mlrcbsousa@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:32:30 by msousa            #+#    #+#             */
-/*   Updated: 2022/04/10 18:14:25 by msousa           ###   ########.fr       */
+/*   Updated: 2022/04/10 19:08:57 by msousa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
 /* Constructors */
-MateriaSource::MateriaSource( void ) { /* no-op */ }
+MateriaSource::MateriaSource( void )
+{
+	for (size_t i = 0; i < SOURCE_SIZE; i++)
+		source[i] = NULL;
+}
+
 MateriaSource::MateriaSource( MateriaSource const & src ) { *this = src; }
 
 /* Destructor */
@@ -27,8 +32,12 @@ MateriaSource::~MateriaSource( void )
 MateriaSource &  MateriaSource::operator = ( MateriaSource const & rhs )
 {
 	if (this != &rhs) {
-		for (size_t i = 0; i < SOURCE_SIZE; i++)
-			if (source[i]) delete source[i];
+		for (size_t i = 0; i < SOURCE_SIZE; i++) {
+			if (source[i]) {
+				delete source[i];
+				source[i] = NULL;
+			}
+		}
 
 		for (size_t i = 0; i < SOURCE_SIZE; i++)
 			if (rhs.source[i]) source[i] = rhs.source[i]->clone();
@@ -38,20 +47,20 @@ MateriaSource &  MateriaSource::operator = ( MateriaSource const & rhs )
 
 void	MateriaSource::learnMateria( AMateria* m )
 {
-	int	i = 0;
-	while (i < SOURCE_SIZE) {
+	if (!m)
+		return;
+
+	for (size_t i = 0; i < SOURCE_SIZE; i++) {
 		if (!source[i]) {
-			source[i] = m->clone();
+			source[i] = m;
 			break ;
 		}
-		i++;
 	}
-	delete m;
 }
 
 AMateria*	MateriaSource::createMateria( std::string const & type )
 {
-	AMateria*	m = 0;
+	AMateria*	m = NULL;
 
 	for (size_t i = 0; i < SOURCE_SIZE; i++) {
 		if (source[i] && source[i]->getType() == type) {
